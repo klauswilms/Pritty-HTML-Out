@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.7" group="system">
+  <name>System - prettyHTMLOut</name>
+  <creationDate>14-Nov-2011</creationDate>
+  <author>Klaus Wilms</author>
+  <authorEmail>kwilms@unitsystems.de</authorEmail>
+  <authorUrl>http://www.unitsystems.de</authorUrl>
+  <copyright>Copyright 2011 - 2012 Unitsystems. All rights re-served.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <version>1.0.0</version>
+  <description>
+    This is a plugin to beautify HTML code.
+    The plugin applies correct indentation to HTML/XHTML 1.0 and JavaScript.
+    It makes the output much more readable.
+    Be careful useing the 'Format Script Tags' option because it needs a lot of time!
+    Dont't forget to publish this plugin ;)
+  </description>
+  <files folder="site">
+    <filename plugin="prittyhtmlout">prittyhtmlout.php</filename>
+    <filename>prittyhtmlout_CHANGELOG.php</filename>
+    <filename>jsbeautifier.php</filename>
+    <filename>logs/plugin_system_prittyhtmlout_log.php</filename>
+  </files>
+  <params/>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+	<field name="indent_size" type="text"
+		description="PLG_PRYTTYHTMLOUT_THE_HTML_INDENT_SIZE_DESC"
+		label="PLG_PRYTTYHTMLOUT_THE_HTML_INDENT_SIZE_LABEL"
+		size="10"
+		default="2"
+	/>
+	<field name="indent_type" type="radio"
+		description="PLG_PRYTTYHTMLOUT_INDENT_TYPE_DESC"
+		label="PLG_PRYTTYHTMLOUT_INDENT_TYPE_LABEL"
+		size="10"
+		default=" "
+	>
+	  <option value=" ">PLG_PRYTTYHTMLOUT_SPACE</option>
+	  <option value="\t">PLG_PRYTTYHTMLOUT_TABULATOR</option>
+	</field>
+	<field name="onAdmin" type="radio"
+		description="PLG_PRYTTYHTMLOUT_ACTIVATE_BACKEND_DESC"
+		label="PLG_PRYTTYHTMLOUT_ACTIVATE_BACKEND_LABEL"
+		default="1"
+	>
+	  <option value="1">PLG_PRYTTYHTMLOUT_YES</option>
+	  <option value="0">PLG_PRYTTYHTMLOUT_NO</option>
+	</field>
+	<field name="onSite" type="radio"
+		description="PLG_PRYTTYHTMLOUT_ACTIVATE_FRONTEND_DESC"
+		label="PLG_PRYTTYHTMLOUT_ACTIVATE_FRONTEND_LABEL"
+		default="1"
+	>
+	  <option value="1">PLG_PRYTTYHTMLOUT_YES</option>
+	  <option value="0">PLG_PRYTTYHTMLOUT_NO</option>
+	</field>
+	<field name="formatHTML" id="formatHTML" type="radio"
+		description="PLG_PRYTTYHTMLOUT_FORMAT_HTML_TAGS_DESC"
+		label="PLG_PRYTTYHTMLOUT_FORMAT_HTML_TAGS_LABEL"
+		size="10"
+		default="0"
+		disabled="false"
+	>
+	  <option value="1">PLG_PRYTTYHTMLOUT_YES</option>
+	  <option value="0">PLG_PRYTTYHTMLOUT_NO</option>
+	</field>
+	<field name="formatStyle" id="formatStyle" type="radio"
+		description="PLG_PRYTTYHTMLOUT_FORMAT_STYLE_TAGS_DESC"
+		label="PLG_PRYTTYHTMLOUT_FORMAT_STYLE_TAGS_LABEL"
+		size="10"
+		default="0"
+		disabled="false"
+	>
+	  <option value="1">PLG_PRYTTYHTMLOUT_YES</option>
+	  <option value="0">PLG_PRYTTYHTMLOUT_NO</option>
+	</field>
+	<field name="formatScript" id="formatScript" type="radio"
+		description="PLG_PRYTTYHTMLOUT_FORMAT_SCRIPT_TAGS_DESC"
+		label="PLG_PRYTTYHTMLOUT_FORMAT_SCRIPT_TAGS_LABEL"
+		size="10"
+		default="0"
+		disabled="false"
+	>
+	  <option value="1">PLG_PRYTTYHTMLOUT_YES</option>
+	  <option value="0">PLG_PRYTTYHTMLOUT_NO</option>
+	</field>
+      </fieldset>
+     </fields>
+  </config>
+</extension>
