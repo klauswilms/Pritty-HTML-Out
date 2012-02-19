@@ -240,6 +240,10 @@ class plgSystemprittyHTMLOut extends JPlugin
 	//fix for utf-8 preg_replace errors
 	mb_detect_encoding($fixthistext, "UTF-8") == "UTF-8" ? $fixthistext =  $fixthistext : $fixthistext = utf8_encode($fixthistext);
 
+	//fix for html in title tags
+	$match = "/(title=\")(.*?)(\")/";
+	$fixthistext = preg_replace_callback($match,array($this,'fix_title_tags'),$fixthistext);
+		
 	// First we compress the output html,
 	// creat the pattern and replacement array's
 	// and clean all scaces, tabs, newlines, carrige retuns, vertical tabs
@@ -450,4 +454,14 @@ class plgSystemprittyHTMLOut extends JPlugin
 	// set each tag on new line
 	return "\n".$match."\n";
     }//end function
+    
+    /**
+     * Fix for html tags in title attributes.
+     *
+     * @param array $matches The array of html-tags to be formated.
+     * @return string Fixed titel attribute.
+     */
+    protected function fix_title_tags($matches){
+    	return $matches[1].htmlentities($matches[2],ENT_QUOTES,"UTF-8").$matches[3];
+    }
 }//class
