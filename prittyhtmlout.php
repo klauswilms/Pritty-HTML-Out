@@ -418,13 +418,13 @@ class plgSystemprittyHTMLOut extends JPlugin
      * @return string Formated style-tags.
      */
     protected function formatStyleTag($matches){
-	$pattern[] = "/\{/";
+	$pattern[] = "#\{#";
 	$replace[] = "{\n";
 	$pattern[] = "/\}/";
 	$replace[] = "\n}\n";
-	$pattern[] = "/(\/*(.*?)*\/)/";
+	$pattern[] = "#(\/\*(.*?)\*\/)#";
 	$replace[] = "\n$1\n";
-	$pattern[] = "/([\w-]+:.*?;)/";
+	$pattern[] = "/([\w-]+?:.*?;)/";
 	$replace[] = "\n".str_repeat($this->indent_type, $this->indent_size)."$1";
 	//buffer for preg_replace errors
 	$buffStyle = $matches[2];
