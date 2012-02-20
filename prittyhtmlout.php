@@ -314,9 +314,9 @@ class plgSystemprittyHTMLOut extends JPlugin
 	$replacement[] = ";";
 
 	// 14.) Match spaces and after ;
-	$pattern[] = "/,[ ]*/m";
+	//$pattern[] = "/,[ ]*/m";
 	// 14.) remove spaces after ;
-	$replacement[] = ",";
+	//$replacement[] = ",";
 
 	// 15.) Match spaces after begin tags
 	//$pattern[] = "/<[ ]+/m";
