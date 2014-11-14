@@ -184,6 +184,7 @@ class JSBeautifier {
 			if ($token_type === TK_EOF) {
 				break;
 			}
+			/*
 			$token_type_str = 'N/A';
 			foreach (get_defined_constants() as $k=>$v) {
 			    if (substr($k, 0, 3) == 'TK_' && $v == $token_type) {
@@ -192,6 +193,7 @@ class JSBeautifier {
 			    }
 			}
 			//echo $token_type_str . "\t" . $token_text . "\n";
+			*/
 			$this->$handlers[$token_type]($token_text);
 			$this->last_last_text = $this->last_text;
 			$this->last_type = $token_type;
